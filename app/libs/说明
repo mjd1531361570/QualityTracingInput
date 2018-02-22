@@ -1,0 +1,2 @@
+org.apache.http.legency.jar 用于Android6.0 
+由于Google已经移除了移除了Apache HttpClient相关的类、HttpResponse类。缺失jar包使用HttpResponse等会报错

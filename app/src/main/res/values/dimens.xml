@@ -1,0 +1,27 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">6dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="wordadapter_RadioButton">6dp</dimen>
+    <dimen name="fragment_shoumaptop">0dp</dimen>
+    <dimen name="higth">35dp</dimen>
+    <dimen name="address">55dp</dimen>
+    <dimen name="activity_email_tv">8dp</dimen>
+	<dimen name="wordadapter_listview_item_margin">70dp</dimen>
+	<dimen name="wordadapter_text">8dp</dimen>
+	<dimen name="fragment_shouworktexttop">4dp</dimen>
+	<dimen name="adapter_fish_address">40dp</dimen>
+
+    <dimen name="dp5">5dp</dimen>
+    <dimen name="dp3">3dp</dimen>
+    <dimen name="dp1">1dp</dimen>
+    <dimen name="dp10">10dp</dimen>
+    <dimen name="dp20">20dp</dimen>
+    <dimen name="dp25">25dp</dimen>
+    <dimen name="dp30">30dp</dimen>
+    <dimen name="dp50">50dp</dimen>
+    <dimen name="dp80">80dp</dimen>
+    <dimen name="dp100">100dp</dimen>
+    <dimen name="dp6">6dp</dimen>
+</resources>

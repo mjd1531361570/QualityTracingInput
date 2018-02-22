@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="grey"> #ebebeb</color>
+    <color name="black"> #000000</color>
+    <color name="darkgrey"> #999999</color>
+    <color name="lightgrey">#d3d3d3</color><!--亮灰色 --> 
+    <color name="white">#FFFFFF</color>
+    <color name="red">#FF0000</color>
+    <color name="blue">#4c90f9</color>
+    <color name="gary">#898989</color>
+    <color name="gray_lite">#c5c5c5</color>
+    <color name="phone_bg">#f6f6f6</color>
+    <color name="transparent">#00000000</color>
+    <color name="itemlist">#f4f4f4</color>
+    <color name="watermark_hint">#ccffffff</color>
+    <color name="act_background">#efefef</color>
+    <!--扫码部分  -->
+     <color name="result_view">#b0000000</color>
+      <color name="viewfinder_mask">#60000000</color>
+      <color name="possible_result_points">#c0ffff00</color> 
+    <!--扫码部分  end-->
+    <color name="mediumblue">#0000cd</color><!--中兰色 --> 
+    <color name="adapter_istrue">#e6e6e6</color>
+    <color name="mybackground">#f9f4f4</color>
+    <!-- 弹框 -->
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    
+
+    <color name="gray">#ddd</color>
+
+    <color name="color1">#fff</color>
+    <color name="color2">#f00</color>
+    <color name="color3">#FECD52</color>
+    <color name="color4">#145CB9</color>
+    <color name="color5">#21AE58</color>
+    <color name="video_gray">#aadddddd</color>
+    
+    
+</resources>
