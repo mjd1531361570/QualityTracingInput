@@ -8,7 +8,7 @@ import com.xintong.qualitytracinginput.activitys.input.businessUnit.fragment.bus
 import com.xintong.qualitytracinginput.activitys.input.businessUnit.fragment.businessManagement.activitys.A.ab.AB_CommodityBasicInfoActivity;
 import com.xintong.qualitytracinginput.activitys.input.businessUnit.fragment.businessManagement.activitys.B.ba.BA_PurchasingAndWarehousingActivity;
 import com.xintong.qualitytracinginput.activitys.input.businessUnit.fragment.businessManagement.activitys.B.bb.BB_ArrearsToBePaidActivity;
-import com.xintong.qualitytracinginput.activitys.input.businessUnit.fragment.businessManagement.activitys.B.bc.BC_AddPurchaseOfReturnFormActivity;
+import com.xintong.qualitytracinginput.activitys.input.businessUnit.fragment.businessManagement.activitys.B.bc.BC_PurchaseOfReturnActivity;
 import com.xintong.qualitytracinginput.activitys.input.businessUnit.fragment.businessManagement.activitys.B.bd.BD_ArrearsToBeCollectedActivity;
 import com.xintong.qualitytracinginput.activitys.input.businessUnit.fragment.businessManagement.activitys.C.C_InventoryInventoryActivity;
 import com.xintong.qualitytracinginput.activitys.input.businessUnit.fragment.businessManagement.activitys.D.da.DA_SellingOutOfTheTreasuryActivity;
@@ -116,8 +116,8 @@ public class F1_InputBusinessManagementFragment extends Fragment implements OnCl
 			startActivity(intent4);
 			break;
 		case R.id.pic5://采购退货
-//			Intent intent5=new Intent(context, .class);
-//			startActivity(intent5);
+			Intent intent5=new Intent(context, BC_PurchaseOfReturnActivity.class);
+			startActivity(intent5);
 			break;
 		case R.id.pic6://欠款待收
 			Intent intent6=new Intent(context, BD_ArrearsToBeCollectedActivity.class);
