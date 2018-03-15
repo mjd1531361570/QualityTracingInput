@@ -20,11 +20,15 @@
         </activity>
         <activity android:name=".activitys.input.businessUnit.InputBusinessUnitMainActivity">
         </activity>
+        <activity android:name=".activitys.input.businessUnit.fragment.businessManagement.activitys.SimpleWebViewActivity">
+        </activity>
         <activity android:name=".activitys.input.businessUnit.fragment.businessManagement.activitys.A.aa.AA_SupplierBasicInformationActivity">
         </activity>
         <activity android:name=".activitys.input.businessUnit.fragment.businessManagement.activitys.A.ab.AB_CommodityBasicInfoActivity">
         </activity>
         <activity android:name=".activitys.input.businessUnit.fragment.businessManagement.activitys.A.ab.AB_AddCommodityBasicInfoFormActivity">
+        </activity>
+        <activity android:name=".activitys.input.businessUnit.fragment.businessManagement.activitys.A.ab.AB_EditCommodityBasicInfoFormActivity">
         </activity>
         <activity android:name=".activitys.input.businessUnit.fragment.businessManagement.activitys.B.ba.BA_PurchasingAndWarehousingActivity">
         </activity>
@@ -34,13 +38,9 @@
         </activity>
         <activity android:name=".activitys.input.businessUnit.fragment.businessManagement.activitys.B.bc.BC_PurchaseOfReturnActivity">
         </activity>
-        <activity android:name=".activitys.input.businessUnit.fragment.businessManagement.activitys.B.bc.BC_AddPurchaseOfReturnFormActivity">
-        </activity>
         <activity android:name=".activitys.input.businessUnit.fragment.businessManagement.activitys.B.bd.BD_ArrearsToBeCollectedActivity">
         </activity>
         <activity android:name=".activitys.input.businessUnit.fragment.businessManagement.activitys.C.C_InventoryInventoryActivity">
-        </activity>
-        <activity android:name=".activitys.input.businessUnit.fragment.businessManagement.activitys.C.C_AddInventoryInventoryFormActivity">
         </activity>
         <activity android:name=".activitys.input.businessUnit.fragment.businessManagement.activitys.D.da.DA_SellingOutOfTheTreasuryActivity">
         </activity>
@@ -76,6 +76,21 @@
 
         <activity android:name=".activitys.input.businessUnit.fragment.selfCenter.suggestionFeedBack.F3_SuggestionFeedBackActivity">
         </activity>
+
+
+
+        <!--每隔10分钟请求后台更新session，防止失效  -->
+        <receiver android:name=".receiver.KeepSessionAlarmReceiver" >
+            <intent-filter>
+                <action android:name="com.xintong.qualitytracinginput.receiver.KeepSessionAlarmReceiver"/>
+            </intent-filter>
+        </receiver>
+        <service android:name=".service.KeepSessionService" >
+            <intent-filter>
+                <action android:name="com.xintong.qualitytracinginput.service.KeepSessionService"/>
+            </intent-filter>
+        </service>
+        <!--每隔10分钟请求后台更新session，防止失效end -->
 
     </application>
     <!-- 高德地图 -->
