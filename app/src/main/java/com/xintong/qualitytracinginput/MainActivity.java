@@ -1,5 +1,6 @@
 package com.xintong.qualitytracinginput;
 
+import android.os.Build;
 import android.os.Bundle;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -16,6 +17,8 @@ import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
+import android.webkit.CookieManager;
+import android.webkit.CookieSyncManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
@@ -31,6 +34,7 @@ import com.xintong.qualitytracinginput.entity.MyPreference;
 import com.xintong.qualitytracinginput.utils.MD5Util;
 import com.xintong.qualitytracinginput.utils.netAsk.Httpthread;
 import com.xintong.qualitytracinginput.utils.netAsk.LoadDialogDao;
+import com.xintong.qualitytracinginput.utils.webView.WebViewUtil;
 
 //登录界面，马军达2018年1月3日10:55:41
 public class MainActivity extends Activity implements OnClickListener{
@@ -183,7 +187,7 @@ public class MainActivity extends Activity implements OnClickListener{
         } else {
             MyPreference.getInstance(getApplicationContext()).setRememberPassword("No");
         }
-        String url = ConstNumbers.Urls.ip_address + "/login/app/appClient2/login/appClient2Login";
+        String url = ConstNumbers.Urls.ip_address + "login/app/appClient2/login/appClient2Login";
         LoadDialogDao lDialog = new LoadDialogDao(this, "正在加载...");
         RequestParams params = new RequestParams();
         params.addBodyParameter("loginName", userAcountEdit.getText().toString());
@@ -363,6 +367,15 @@ public class MainActivity extends Activity implements OnClickListener{
                         Toast.makeText(context, "2投入品生产单位还没开发", Toast.LENGTH_SHORT).show();
                         break;
                     case 3://3投入品经营单位
+//                        String url = ConstNumbers.Urls.ip_address + "login/app/appClient2/login/appClient2Login";
+//                        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+//                            CookieSyncManager.createInstance(context);
+//                        }
+//                        CookieManager cookieManager = CookieManager.getInstance();
+//                        String CookieStr = cookieManager.getCookie(url);
+//                        System.out.println("#####login CookieStr:"+CookieStr);
+//                        MyPreference.getInstance(context).setCookie(CookieStr);//在这存储的cookie
+
                         Intent intent5=new Intent(context, InputBusinessUnitMainActivity.class);
                         startActivity(intent5);
                         MyPreference.getInstance(getApplicationContext()).setRememberWhich("5");
