@@ -1,5 +1,6 @@
 package com.xintong.qualitytracinginput.activitys.input.businessUnit.fragment.selfCenter;
 
+import com.xintong.qualitytracinginput.ConstNumbers;
 import com.xintong.qualitytracinginput.R;
 import com.xintong.qualitytracinginput.activitys.input.businessUnit.fragment.selfCenter.suggestionFeedBack.F3_SuggestionFeedBackActivity;
 import com.xintong.qualitytracinginput.entity.MyPreference;
@@ -53,6 +54,13 @@ public class F3_InputBusinessSelfCenterFragment extends Fragment implements OnCl
 		switch (v.getId()) {
 			case R.id.exit_login_ll://退出登录
 				MyPreference.getInstance(context).setRememberWhich("");
+
+				//取消keepsession的service
+				Intent intent1 = new Intent();
+				intent1.setAction("com.example.qualitytracingsupervisor.service.KeepSessionService");
+				context.stopService(intent1);
+				ConstNumbers.isCanceledAlarmManager=true;//关闭定时器
+
 				System.exit(0);
 				break;
 			case R.id.settings_ll:
