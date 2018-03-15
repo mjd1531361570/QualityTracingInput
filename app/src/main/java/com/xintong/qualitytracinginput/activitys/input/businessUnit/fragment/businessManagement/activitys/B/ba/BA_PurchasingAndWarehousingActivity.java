@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.view.Window;
+import android.webkit.CookieManager;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 
@@ -35,7 +36,8 @@ public class BA_PurchasingAndWarehousingActivity extends Activity{
 
     private void initView() {
         webView.getSettings().setJavaScriptEnabled(true);
-        String url= ConstNumbers.Urls.ip_address+"login/app/appClient3/BA_PurchasingAndWarehousController/getBA_PurchasingAndWarehous";//新增供应商基本信息,获取表单
+        String url= ConstNumbers.Urls.ip_address+"login/app/appClient3/BA_PurchasingAndWarehousController/getBA_PurchasingAndWarehousList";//新增供应商基本信息,获取表单
+
         WebViewUtil.setCookie(context, MyPreference.getCookie(),url);//设置cookie
         webView.addJavascriptInterface(this, "jsa");
         webView.requestFocus(View.FOCUS_DOWN);

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
+import android.view.Window;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 
@@ -24,6 +25,7 @@ public class BD_ArrearsToBeCollectedActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.bd_arrears_to_be_collected_activity);
         AnnotateUtil.inject(this);
         context= BD_ArrearsToBeCollectedActivity.this;
@@ -31,7 +33,7 @@ public class BD_ArrearsToBeCollectedActivity extends Activity {
     }
     private void initView() {
         webView.getSettings().setJavaScriptEnabled(true);
-        String url= ConstNumbers.Urls.ip_address+"login/app/appClient3/BD_ArrearsToBeCollectedController/getArrearsToBeCollectedList";//
+        String url= ConstNumbers.Urls.ip_address+"login/app/appClient3/BD_ArrearsToBeCollectedController/getBD_ArrearsToBeCollectedList";//
         WebViewUtil.setCookie(context, MyPreference.getCookie(),url);//设置cookie
         webView.addJavascriptInterface(this, "jsa");
         webView.requestFocus(View.FOCUS_DOWN);

@@ -7,7 +7,9 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.view.Window;
 import android.webkit.JavascriptInterface;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
+import android.widget.Toast;
 
 import com.xintong.qualitytracinginput.ConstNumbers;
 import com.xintong.qualitytracinginput.R;
@@ -35,12 +37,20 @@ public class AB_AddCommodityBasicInfoFormActivity extends Activity{
     }
 
     private void initView() {
+        String selectedId=getIntent().getExtras().getString("selectedId");//没屌用
+        System.out.println("####接收selectedId:"+selectedId);
+//        String url= ConstNumbers.Urls.ip_address+"login/app/appClient3/AB_CommodityBasicInfoController/getAB_CommodityBasicInfoList";
         String url= ConstNumbers.Urls.ip_address+"login/app/appClient3/AB_CommodityBasicInfoController/getAB_CommodityBasicInfoForm";//新增供应商基本信息,获取表单
         webView.getSettings().setJavaScriptEnabled(true);
+        webView.setWebChromeClient(new WebChromeClient());
         WebViewUtil.setCookie(context, MyPreference.getCookie(),url);//设置cookie
         webView.addJavascriptInterface(this, "jsa");
         webView.requestFocus(View.FOCUS_DOWN);
         webView.loadUrl(url);
+    }
+    @JavascriptInterface
+    public void showMsg(String msg,String msg2) {
+        Toast.makeText(context,msg+","+msg2, Toast.LENGTH_SHORT).show();
     }
     @JavascriptInterface
     public void cancelAndroid(String msg) {

@@ -36,16 +36,11 @@ public class C_InventoryInventoryActivity extends Activity{
 
     private void initView() {
         webView.getSettings().setJavaScriptEnabled(true);
-        String url= ConstNumbers.Urls.ip_address+"login/app/appClient3/C_InventoryInventoryController/getC_InventoryInventory";//库存盘点
+        String url= ConstNumbers.Urls.ip_address+"login/app/appClient3/C_InventoryInventoryController/getC_InventoryInventoryList";//库存盘点
         WebViewUtil.setCookie(context, MyPreference.getCookie(),url);//设置cookie
         webView.addJavascriptInterface(this, "jsa");
         webView.requestFocus(View.FOCUS_DOWN);
         webView.loadUrl(url);
-    }
-    @MyClick(R.id.newAdd)
-    public void newAdd(View view) {//新增采购信息
-        Intent intent=new Intent(context,C_InventoryInventoryActivity.class);
-        startActivity(intent);
     }
     @JavascriptInterface
     public void cancelAndroid(String msg) {

@@ -30,8 +30,6 @@ public class AA_SupplierBasicInformationActivity extends Activity{
     Context context;
     @BindView(R.id.webView)
     public WebView webView;
-    @BindView(R.id.newAdd)
-    public WebView newAdd;
     AlertDialog alertDialog;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,23 +42,11 @@ public class AA_SupplierBasicInformationActivity extends Activity{
         initViews();
     }
     private void initViews() {
-        String url= ConstNumbers.Urls.ip_address+"login/app/appClient3/AA_SupplierBasicInfoController/getAA_SupplierBasicInfo";
+        String url= ConstNumbers.Urls.ip_address+"login/app/appClient3/AA_SupplierBasicInfoController/getAA_SupplierBasicInfoList";
         webView.getSettings().setJavaScriptEnabled(true);
         WebViewUtil.setCookie(context, MyPreference.getCookie(),url);//设置cookie
         webView.addJavascriptInterface(this, "jsa");
         webView.loadUrl(url);//供应商基本信息
-    }
-    @MyClick(R.id.newAdd)
-    public void newAdd(View view){//新增供应商基本信息
-        View alertView= LayoutInflater.from(context).inflate(R.layout.alert_web_view_layout,null);
-        WebView webView=alertView.findViewById(R.id.webView);
-        String url= ConstNumbers.Urls.ip_address+"login/app/appClient3/AA_SupplierBasicInfoController/getAA_SupplierBasicInfoForm";//新增供应商基本信息,获取表单
-        webView.getSettings().setJavaScriptEnabled(true);
-        WebViewUtil.setCookie(context, MyPreference.getCookie(),url);//设置cookie
-        webView.addJavascriptInterface(this, "jsa");
-        webView.loadUrl(url);
-        alertDialog=new AlertDialog.Builder(context).setView(alertView).create();
-        alertDialog.show();
     }
     @JavascriptInterface
     public void cancelAndroidAlert(String msg) {
