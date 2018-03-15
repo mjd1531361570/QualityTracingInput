@@ -14,10 +14,14 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 
+import com.xintong.qualitytracinginput.ConstNumbers;
 import com.xintong.qualitytracinginput.R;
 import com.xintong.qualitytracinginput.activitys.input.businessUnit.fragment.businessManagement.F1_InputBusinessManagementFragment;
 import com.xintong.qualitytracinginput.activitys.input.businessUnit.fragment.businessManagement.F2_InputBusinessFragment;
 import com.xintong.qualitytracinginput.activitys.input.businessUnit.fragment.selfCenter.F3_InputBusinessSelfCenterFragment;
+import com.xintong.qualitytracinginput.entity.MyPreference;
+import com.xintong.qualitytracinginput.service.KeepSessionService;
+import com.xintong.qualitytracinginput.utils.webView.WebViewUtil;
 
 //投入品经营单位三个选项卡
 public class InputBusinessUnitMainActivity extends Activity implements OnCheckedChangeListener{
@@ -35,6 +39,12 @@ public class InputBusinessUnitMainActivity extends Activity implements OnChecked
 		context=InputBusinessUnitMainActivity.this;
 		findView();
 		initView();
+		keepSession();
+	}
+	private void keepSession() {//保持session
+		ConstNumbers.isCanceledAlarmManager=false;//开启
+		Intent intent = new Intent(this, KeepSessionService.class);
+		startService(intent);
 	}
 	private void findView() {
 		radioGroup=(RadioGroup) findViewById(R.id.radio_group);
