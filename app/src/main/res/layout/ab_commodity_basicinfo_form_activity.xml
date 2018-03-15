@@ -11,23 +11,11 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
-        <TextView
+        <WebView
+            android:id="@+id/webView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="15sp"
-            android:text="新增商品基本信息"/>
-
-                <WebView
-                    android:id="@+id/webView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                </WebView>
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="点此使对话框上台防止键盘遮挡！"
-                    android:visibility="visible"/>
+            android:layout_height="match_parent">
+        </WebView>
 
     </LinearLayout>
 

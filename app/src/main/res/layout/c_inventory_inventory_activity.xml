@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <View
+    <!--<View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#F2F2F2"/>
@@ -33,7 +33,7 @@
             android:background="@drawable/me_button_selected"
             android:textSize="14sp"
             android:text="新增采购" />
-    </RelativeLayout>
+    </RelativeLayout>-->
 
     <WebView
         android:id="@+id/webView"

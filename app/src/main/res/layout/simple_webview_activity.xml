@@ -3,8 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <WebView
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#F2F2F2"/>
+
+    <com.xintong.qualitytracinginput.utils.webView.TinyWebView
         android:id="@+id/webView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></WebView>
+        android:layout_height="match_parent">
+    </com.xintong.qualitytracinginput.utils.webView.TinyWebView>
 </LinearLayout>

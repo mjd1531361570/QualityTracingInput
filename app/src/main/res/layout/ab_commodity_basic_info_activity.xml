@@ -35,8 +35,9 @@
             android:text="新增商品" />
     </RelativeLayout>-->
 
-    <WebView
+    <com.xintong.qualitytracinginput.utils.webView.TinyWebView
         android:id="@+id/webView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></WebView>
+        android:layout_height="match_parent">
+    </com.xintong.qualitytracinginput.utils.webView.TinyWebView>
 </LinearLayout>

@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <View
+<!--    <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#F2F2F2"/>
@@ -27,13 +27,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:layout_marginBottom="3dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="3dp"
-            android:layout_marginBottom="3dp"
             android:background="@drawable/me_button_selected"
-            android:textSize="14sp"
-            android:text="新增退货" />
-    </RelativeLayout>
+            android:text="新增退货"
+            android:textSize="14sp" />
+    </RelativeLayout>-->
 
     <WebView
         android:id="@+id/webView"
