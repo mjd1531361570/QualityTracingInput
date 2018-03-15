@@ -1,11 +1,15 @@
 package com.xintong.qualitytracinginput.utils.netAsk;
 
 
+import android.app.Activity;
 import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.webkit.CookieManager;
+import android.webkit.CookieSyncManager;
+import android.widget.Toast;
 
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
@@ -83,11 +87,15 @@ public class Httpthread {
 					lDialog.hide();
 				}
 				if(url.equals(ConstNumbers.Urls.ip_address+"login/app/appClient2/login/appClient2Login")){//登录时记录获取cookie
-					DefaultHttpClient httpClient=(DefaultHttpClient) http.getHttpClient();
-					CookieStore cookieStore = httpClient.getCookieStore();
-					MyPreference.getInstance(context).setCookie(cookieStore.getCookies().get(0).getValue());
-					http.configCookieStore(cookieStore);
-//					Toast.makeText(context, "存储cookie成功："+cookieStore, Toast.LENGTH_SHORT).show();
+//					if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+						DefaultHttpClient httpClient=(DefaultHttpClient) http.getHttpClient();
+						CookieStore cookieStore = httpClient.getCookieStore();
+						System.out.println("###返回存储的cookieStore："+cookieStore);
+						String value=cookieStore.getCookies().get(0).getValue();
+						System.out.println("###MyPreference存储的value："+value);
+						MyPreference.getInstance(context).setCookie(value);
+						http.configCookieStore(cookieStore);
+//					}
 				}
 
 			}});
